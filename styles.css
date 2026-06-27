@@ -30,3 +30,37 @@ body {
     bottom: 0;
     z-index: -1;
 }
+
+
+
+.container {
+    max-width: 1110px;
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.top-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 2rem;
+}
+
+.main-heading {
+    color: hsl(300, 43%, 22%);
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: -2px;
+    margin-bottom: 1.5rem;
+    max-width: 450px;
+}
+
+.sub-heading {
+    color: hsl(303, 10%, 53%);
+    line-height: 1.6;
+    font-weight: 500;
+    max-width: 445px;
+}
