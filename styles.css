@@ -49,8 +49,9 @@ body {
    (Applied to smaller screens by default)
    ========================================== */
 .container {
-    max-width: 69.375rem; /* 1110px converted to rem */
-    margin: 4rem 1.5rem;
+    max-width: 69.375rem; 
+    /* Fixed: Uses clamp() to make the top/bottom and left/right margins fluid */
+    margin: clamp(2rem, 5vw, 4rem) clamp(1rem, 3vw, 1.5rem); 
     display: flex;
     flex-direction: column;
     gap: 4rem;
