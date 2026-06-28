@@ -159,3 +159,42 @@ body {
     line-height: 1.6;
     font-weight: 500;
 }
+
+@media (max-width: 768px) {
+    .top-section {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .main-heading {
+        font-size: 2.5rem;
+        margin: 0 auto 1.5rem;
+    }
+
+    .sub-heading {
+        margin: 0 auto;
+    }
+
+    .rating-card {
+        width: 100%;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .rating-card:nth-child(1),
+    .rating-card:nth-child(2),
+    .rating-card:nth-child(3) {
+        align-self: initial;
+    }
+
+    .bottom-section {
+        grid-template-columns: 1fr;
+        height: auto;
+    }
+
+    .review-card:nth-child(1),
+    .review-card:nth-child(2),
+    .review-card:nth-child(3) {
+        align-self: initial;
+    }
+}
