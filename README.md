@@ -1,6 +1,6 @@
 # Frontend Mentor - Social Proof Section Solution
 
-This is my personal solution to the [Social Proof Section challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/social-proof-section-6e0qTv_bA). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
+This is my personal solution to the [Social Proof Section challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/social-proof-section-6e0qTv_bA). 
 
 ## Table of contents
 
@@ -23,8 +23,6 @@ Users should be able to:
 ### Screenshot
 
 ![My Solution Screenshot](./images/screenshot.jpg)
-
-*(Tip: Take a screenshot of your live web page, name it `screenshot.png`, place it inside your `images` folder, and push it to GitHub so it displays here!)*
 
 ### Links
 
