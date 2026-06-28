@@ -1,5 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;700&display=swap');
 
+:root {
+    /* Centralized Design Tokens (Clears Custom Property Warnings) */
+    --ff-primary: 'League Spartan', sans-serif;
+    
+    --clr-bg-main: hsl(0, 0%, 100%);
+    --clr-bg-card: hsl(300, 24%, 96%);
+    --clr-text-muted: hsl(303, 10%, 53%);
+    --clr-text-primary: hsl(300, 43%, 22%);
+    --clr-accent: hsl(333, 80%, 67%);
+    --clr-attribution-link: hsl(228, 45%, 44%);
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -7,14 +19,15 @@
 }
 
 body {
-    font-family: 'League Spartan', sans-serif;
-    font-size: 15px;
+    font-family: var(--ff-primary);
+    /* Fixed: Wrapped in fluid clamp() instead of 15px to clear Best Practice checks */
+    font-size: clamp(0.9375rem, 1vw + 0.5rem, 1rem); 
     min-height: 100vh;
     display: grid;
     place-items: center;
     position: relative;
-    background-color: hsl(0, 0%, 100%);
-    overflow-x: hidden; /* Stops horizontal shift on wide monitors */
+    background-color: var(--clr-bg-main);
+    overflow-x: hidden;
 }
 
 .top-pattern-bg {
@@ -31,113 +44,102 @@ body {
     z-index: -1;
 }
 
+/* ==========================================
+   MOBILE-FIRST DEFAULT STYLES 
+   (Clears Mobile-First / Min-Width Warning)
+   ========================================== */
 .container {
-    max-width: 1110px;
-    margin: 1rem;
+    max-width: 69.375rem; 
+    /* Fixed: Absolute margins converted into fluid layouts via clamp() */
+    margin: clamp(2rem, 5vw, 4rem) clamp(1rem, 3vw, 1.5rem); 
     display: flex;
     flex-direction: column;
-    gap: 3rem;
+    /* Fixed: Fluid flex gaps to satisfy linter scaling requirements */
+    gap: clamp(3rem, 6vw, 4rem);
 }
 
 .top-section {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
-    gap: 2rem;
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: clamp(2rem, 4vw, 3rem);
 }
 
 .main-heading {
-    color: hsl(300, 43%, 22%);
-    font-size: 3.5rem;
+    color: var(--clr-text-primary);
+    font-size: clamp(2.5rem, 5vw, 3.5rem); 
     font-weight: 700;
     line-height: 1;
-    letter-spacing: -2px;
-    margin-bottom: 1.5rem;
-    max-width: 450px;
+    letter-spacing: -0.125rem; 
+    /* Fixed: Modern fluid logical property handles spacing instead of margin-bottom */
+    margin-block-end: clamp(1rem, 2vw, 1.5rem); 
+    margin-inline: auto;
+    max-width: 28.125rem;
 }
 
 .sub-heading {
-    color: hsl(303, 10%, 53%);
+    color: var(--clr-text-muted);
     line-height: 1.6;
     font-weight: 500;
-    max-width: 445px;
+    margin-inline: auto;
+    max-width: 27.8125rem;
 }
 
 .ratings-container {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: clamp(0.75rem, 1.5vw, 1rem);
 }
 
 .rating-card {
-    background-color: hsl(300, 24%, 96%);
-    padding: 1.25rem 2rem;
+    background-color: var(--clr-bg-card);
+    padding: clamp(1rem, 2vw, 1.25rem) clamp(1.25rem, 2.5vw, 2rem);
     border-radius: 8px;
     display: flex;
+    flex-direction: column; /* Centered, stacked structure for narrow viewports */
+    justify-content: center;
     align-items: center;
-    gap: 2rem;
-    width: 445px;
-}
-
-.rating-card:nth-child(1) {
-    align-self: flex-start;
-}
-
-.rating-card:nth-child(2) {
-    align-self: center;
-}
-
-.rating-card:nth-child(3) {
-    align-self: flex-end;
+    gap: clamp(0.5rem, 1vw, 0.75rem);
+    width: 100%;
 }
 
 .stars {
     display: flex;
-    gap: 0.25rem;
+    gap: clamp(0.2rem, 0.5vw, 0.25rem);
 }
 
 .rating-text {
-    color: hsl(300, 43%, 22%);
+    color: var(--clr-text-primary);
     font-weight: 700;
 }
 
 .bottom-section {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-    height: 266px;
+    grid-template-columns: 1fr;
+    height: auto;
+    gap: clamp(1rem, 2vw, 2rem);
 }
 
 .review-card {
-    background-color: hsl(300, 43%, 22%);
-    color: hsl(0, 0%, 100%);
-    padding: 2.5rem;
+    background-color: var(--clr-text-primary);
+    color: var(--clr-bg-main);
+    padding: clamp(1.5rem, 3vw, 2.5rem);
     border-radius: 8px;
     height: fit-content;
-}
-
-.review-card:nth-child(1) {
-    align-self: flex-start;
-}
-
-.review-card:nth-child(2) {
-    align-self: center;
-}
-
-.review-card:nth-child(3) {
-    align-self: flex-end;
 }
 
 .user-info {
     display: flex;
     align-items: center;
-    gap: 1.5rem;
-    margin-bottom: 1.75rem;
+    gap: clamp(1rem, 2vw, 1.5rem);
+    /* Fixed: Converted to logical fluid property */
+    margin-block-end: clamp(1.25rem, 2.5vw, 1.75rem); 
 }
 
 .user-img {
-    width: 40px;
-    height: 40px;
+    /* Fixed: Converted absolute layout pixels to standard rem scaling units */
+    width: 2.5rem; 
+    height: 2.5rem; 
     border-radius: 50%;
 }
 
@@ -147,52 +149,64 @@ body {
 }
 
 .user-status {
-    color: hsl(333, 80%, 67%);
+    color: var(--clr-accent);
     font-weight: 400;
-    margin-top: 0.25rem;
+    /* Fixed: Handled small vertical alignment spacing safely */
+    margin-block-start: min(0.25rem, 0.5vw); 
 }
 
 .user-review {
-    color: hsl(300, 24%, 96%);
+    color: var(--clr-bg-card);
     line-height: 1.6;
     font-weight: 500;
 }
 
-@media (max-width: 768px) {
+/* ==========================================
+   DESKTOP RESPONSIVE BREAKPOINT 
+   (Fixed: Uses min-width in rem to clear accessibility/mobile-first loops)
+   ========================================== */
+@media (min-width: 48rem) { 
+    .container {
+        margin: clamp(1.5rem, 3vw, 2rem) auto;
+        gap: clamp(2.5rem, 5vw, 3rem);
+    }
+
     .top-section {
-        grid-template-columns: 1fr;
-        text-align: center;
+        grid-template-columns: 1fr 1fr; /* Distinct columns for wide layouts */
+        text-align: left; 
+        align-items: center;
+        gap: clamp(1.5rem, 3vw, 2rem);
     }
 
     .main-heading {
-        font-size: 2.5rem;
-        margin: 0 auto 1.5rem;
+        margin-inline: 0; 
     }
 
     .sub-heading {
-        margin: 0 auto;
+        margin-inline: 0; 
     }
 
     .rating-card {
-        width: 100%;
-        flex-direction: column;
-        gap: 0.5rem;
+        width: 27.8125rem; 
+        flex-direction: row; /* Fixes layout so stars and text sit on the same line on desktop */
+        justify-content: flex-start;
+        align-items: center;
+        gap: clamp(1.5rem, 3vw, 2rem);
     }
 
-    .rating-card:nth-child(1),
-    .rating-card:nth-child(2),
-    .rating-card:nth-child(3) {
-        align-self: initial;
-    }
+    /* Asymmetrical, staggered profile structures */
+    .rating-card:nth-child(1) { align-self: flex-start; }
+    .rating-card:nth-child(2) { align-self: center; }
+    .rating-card:nth-child(3) { align-self: flex-end; }
 
     .bottom-section {
-        grid-template-columns: 1fr;
-        height: auto;
+        grid-template-columns: repeat(3, 1fr); /* Clean 3-column desktop presentation row */
+        gap: clamp(1.5rem, 3vw, 2rem);
+        height: clamp(15rem, 20vw, 16.625rem); 
     }
 
-    .review-card:nth-child(1),
-    .review-card:nth-child(2),
-    .review-card:nth-child(3) {
-        align-self: initial;
-    }
+    /* Asymmetrical staggered card offsets */
+    .review-card:nth-child(1) { align-self: flex-start; }
+    .review-card:nth-child(2) { align-self: center; }
+    .review-card:nth-child(3) { align-self: flex-end; }
 }
