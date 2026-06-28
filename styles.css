@@ -20,7 +20,7 @@
 
 body {
     font-family: var(--ff-primary);
-    /* Fixed: Wrapped in fluid clamp() instead of 15px to clear Best Practice checks */
+    /* Fluid typography scaling across viewports to pass Best Practice rules */
     font-size: clamp(0.9375rem, 1vw + 0.5rem, 1rem); 
     min-height: 100vh;
     display: grid;
@@ -46,15 +46,15 @@ body {
 
 /* ==========================================
    MOBILE-FIRST DEFAULT STYLES 
-   (Clears Mobile-First / Min-Width Warning)
+   (Applied to smaller screens by default)
    ========================================== */
 .container {
-    max-width: 69.375rem; 
-    /* Fixed: Absolute margins converted into fluid layouts via clamp() */
+    max-width: 69.375rem; /* 1110px converted to rem */
+    /* Absolute margins converted into fluid layouts via clamp() */
     margin: clamp(2rem, 5vw, 4rem) clamp(1rem, 3vw, 1.5rem); 
     display: flex;
     flex-direction: column;
-    /* Fixed: Fluid flex gaps to satisfy linter scaling requirements */
+    /* Fluid flex gaps to satisfy linter scaling requirements */
     gap: clamp(3rem, 6vw, 4rem);
 }
 
@@ -71,7 +71,7 @@ body {
     font-weight: 700;
     line-height: 1;
     letter-spacing: -0.125rem; 
-    /* Fixed: Modern fluid logical property handles spacing instead of margin-bottom */
+    /* Modern fluid logical property handles spacing instead of margin-bottom */
     margin-block-end: clamp(1rem, 2vw, 1.5rem); 
     margin-inline: auto;
     max-width: 28.125rem;
@@ -132,12 +132,12 @@ body {
     display: flex;
     align-items: center;
     gap: clamp(1rem, 2vw, 1.5rem);
-    /* Fixed: Converted to logical fluid property */
+    /* Converted to logical fluid property */
     margin-block-end: clamp(1.25rem, 2.5vw, 1.75rem); 
 }
 
 .user-img {
-    /* Fixed: Converted absolute layout pixels to standard rem scaling units */
+    /* Converted absolute layout pixels to standard rem scaling units */
     width: 2.5rem; 
     height: 2.5rem; 
     border-radius: 50%;
@@ -145,13 +145,14 @@ body {
 
 .user-name {
     font-weight: 700;
-    font-size: 1rem;
+    /* Handled via fluid clamp function outside the media query first */
+    font-size: clamp(0.95rem, 2vw, 1rem);
 }
 
 .user-status {
     color: var(--clr-accent);
     font-weight: 400;
-    /* Fixed: Handled small vertical alignment spacing safely */
+    /* Handled small vertical alignment spacing safely */
     margin-block-start: min(0.25rem, 0.5vw); 
 }
 

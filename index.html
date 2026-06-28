@@ -14,8 +14,21 @@
     <link rel="stylesheet" href="styles.css">
     
     <style>
-      .attribution { font-size: 0.6875rem; text-align: center; margin-top: 2rem; }
-      .attribution a { color: hsl(228, 45%, 44%); }
+      /* Fixed: Replaced with relative fluid logical properties and variables */
+      .attribution { 
+        font-size: clamp(0.6875rem, 1.5vw, 0.75rem); 
+        text-align: center; 
+        margin-block-start: clamp(2rem, 4vw, 3rem); 
+        margin-block-end: clamp(1rem, 2vw, 1.5rem);
+      }
+      .attribution a { 
+        color: var(--clr-attribution-link); 
+        text-decoration: none;
+        font-weight: 700;
+      }
+      .attribution a:hover {
+        text-decoration: underline;
+      }
     </style>
   </head>
   <body>
@@ -37,33 +50,33 @@
         <div class="ratings-container">
           <div class="rating-card">
             <div class="stars">
-              <img src="images/icon-star.svg" alt="">
-              <img src="images/icon-star.svg" alt="">
-              <img src="images/icon-star.svg" alt="">
-              <img src="images/icon-star.svg" alt="">
-              <img src="images/icon-star.svg" alt="">
+              <img src="images/icon-star.svg" alt="Star graphic indicator">
+              <img src="images/icon-star.svg" alt="Star graphic indicator">
+              <img src="images/icon-star.svg" alt="Star graphic indicator">
+              <img src="images/icon-star.svg" alt="Star graphic indicator">
+              <img src="images/icon-star.svg" alt="Star graphic indicator">
             </div>
             <span class="rating-text">Rated 5 Stars in Reviews</span>
           </div>
 
           <div class="rating-card">
             <div class="stars">
-              <img src="images/icon-star.svg" alt="">
-              <img src="images/icon-star.svg" alt="">
-              <img src="images/icon-star.svg" alt="">
-              <img src="images/icon-star.svg" alt="">
-              <img src="images/icon-star.svg" alt="">
+              <img src="images/icon-star.svg" alt="Star graphic indicator">
+              <img src="images/icon-star.svg" alt="Star graphic indicator">
+              <img src="images/icon-star.svg" alt="Star graphic indicator">
+              <img src="images/icon-star.svg" alt="Star graphic indicator">
+              <img src="images/icon-star.svg" alt="Star graphic indicator">
             </div>
             <span class="rating-text">Rated 5 Stars in Report Guru</span>
           </div>
 
           <div class="rating-card">
             <div class="stars">
-              <img src="images/icon-star.svg" alt="">
-              <img src="images/icon-star.svg" alt="">
-              <img src="images/icon-star.svg" alt="">
-              <img src="images/icon-star.svg" alt="">
-              <img src="images/icon-star.svg" alt="">
+              <img src="images/icon-star.svg" alt="Star graphic indicator">
+              <img src="images/icon-star.svg" alt="Star graphic indicator">
+              <img src="images/icon-star.svg" alt="Star graphic indicator">
+              <img src="images/icon-star.svg" alt="Star graphic indicator">
+              <img src="images/icon-star.svg" alt="Star graphic indicator">
             </div>
             <span class="rating-text">Rated 5 Stars in BestTech</span>
           </div>
@@ -73,7 +86,7 @@
       <section class="bottom-section">
         <div class="review-card">
           <div class="user-info">
-            <img src="images/image-colton.jpg" alt="" class="user-img">
+            <img src="images/image-colton.jpg" alt="Colton Smith Profile Layout" class="user-img">
             <div>
               <h2 class="user-name">Colton Smith</h2>
               <p class="user-status">Verified Buyer</p>
@@ -88,7 +101,7 @@
 
         <div class="review-card">
           <div class="user-info">
-            <img src="images/image-irene.jpg" alt="" class="user-img">
+            <img src="images/image-irene.jpg" alt="Irene Roberts Profile Layout" class="user-img">
             <div>
               <h2 class="user-name">Irene Roberts</h2>
               <p class="user-status">Verified Buyer</p>
@@ -102,7 +115,7 @@
 
         <div class="review-card">
           <div class="user-info">
-            <img src="images/image-anne.jpg" alt="" class="user-img">
+            <img src="images/image-anne.jpg" alt="Anne Wallace Profile Layout" class="user-img">
             <div>
               <h2 class="user-name">Anne Wallace</h2>
               <p class="user-status">Verified Buyer</p>
@@ -119,9 +132,8 @@
 
     <footer class="attribution">
       Challenge by
-      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
-        >Frontend Mentor</a
-      >. Coded by <a href="https://github.com/emanabd1">Eman Abdulsemed</a>.
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="https://github.com/emanabd1" target="_blank">Eman Abdulsemed</a>.
     </footer>
   </body>
 </html>
