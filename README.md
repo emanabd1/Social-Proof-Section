@@ -1,6 +1,6 @@
-# Frontend Mentor - Social Proof Section Solution
+# Frontend Mentor - Social proof section solution
 
-This is my personal solution to the [Social Proof Section challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/social-proof-section-6e0qTv_bA). 
+This is my personal solution to the [Social proof section challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/social-proof-section-6e0qTv_bA). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
 
 ## Table of contents
 
@@ -12,41 +12,60 @@ This is my personal solution to the [Social Proof Section challenge on Frontend 
   - [Built with](#built-with)
   - [What I learned](#what-i-learned)
   - [Continued development](#continued-development)
+  - [AI Collaboration](#ai-collaboration)
+- [Author](#author)
 
 ## Overview
 
 ### The challenge
 
 Users should be able to:
-- View the optimal layout for the section depending on their device's screen size (Responsive design down to 375px mobile viewports).
+- View the optimal layout for the section depending on their device's screen size
 
 ### Screenshot
 
-![My Solution Screenshot](./images/screenshot.jpg)
+![](./images/screenshot.jpg)
 
 ### Links
 
 - Solution URL: [Frontend Mentor Solution Page](https://www.frontendmentor.io/solutions/responsive-social-proof-section-using-css-grid-flexbox-ucpN)
-- Live Site URL: [Live Deployment Link](https://social-proof-section1-one.vercel.app/)
+- Live Site URL: [Live Production Deployment](https://social-proof-section1-one.vercel.app/)
 
 ## My process
 
 ### Built with
 
-- Semantic HTML5 structural landmarks (`<main>`, `<section>`, `<footer>`)
-- CSS Custom Properties (Variables)
-- CSS Grid (For 2-column hero section and 3-column review card rows)
-- CSS Flexbox (For star rating internal layout structures)
-- Mobile-responsive adjustments using media breakpoints
-- Google Fonts integration (`League Spartan` typography)
+- Semantic HTML5 structural markup (`<main>`, `<section>`, `<footer>`)
+- CSS custom properties (Variables)
+- Flexbox (For star icon alignments and testimonial inner layouts)
+- CSS Grid (For asymmetric layout positioning across the dashboard canvas)
+- Responsive design via media query breakpoints
 
 ### What I learned
 
-During this challenge, I practiced handling asymmetric layouts and responsive grid configurations. 
+During this challenge, I sharpened my skills with asymmetric CSS layouts and responsive structures. I focused heavily on building structural blocks cleanly without relying on hacky, hardcoded absolute margins.
 
-1. **Stair-Step Staggering:** I learned how to use individual item alignment (`align-self`) within flexible column flows and explicit grid row heights to cascade the elements into a diagonal path without breaking the semantic layout stream:
+1. **Stair-step Staggering using `align-self`:** By pairing a defined height or layout wrapper with flex/grid alignment properties, I successfully grid-aligned rows and columns into a cascading, diagonal design pathway.
+
 ```css
-/* Staggering the star rating rows */
+/* Cascading the three star rating card components */
 .rating-card:nth-child(1) { align-self: flex-start; }
 .rating-card:nth-child(2) { align-self: center; }
 .rating-card:nth-child(3) { align-self: flex-end; }
+
+Continued development
+In upcoming projects, I intend to approach my design layouts using a strict Mobile-First workflow. Building layouts fluidly from a small mobile viewport upward makes the stylesheet architecture simpler, reduces rules code overriding, and ensures maintainable code.
+
+AI Collaboration
+I used AI to help brainstorm layout strategies, audit syntax conventions, and debug configuration errors during deployment.
+
+Tools Used: Gemini (Google AI)
+
+Usage Context: Figuring out semantic element distribution, structuring conditional container heights, fixing media query design shifts, and managing public URL tracking settings inside Vercel.
+
+Outcomes: Highly effective workflow acceleration. It helped me avoid unnecessary CSS rule redundancy and quickly resolve deployment-specific accessibility barriers.
+
+Author
+Frontend Mentor - @emanabd1
+
+GitHub - emanabd1
